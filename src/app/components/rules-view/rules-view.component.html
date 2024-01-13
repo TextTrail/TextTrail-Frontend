@@ -1,0 +1,16 @@
+<div style="height: 90cqh; width: 100cqw; background-color: #009e9e;overflow:auto ">
+    <div *ngFor="let rule of rules">
+        <app-rule [rule]="rule" (onChange)="onChange()"></app-rule>
+    </div>
+</div>
+<div style="height: 10cqh; width: 100cqw;background-color: #ac039e;">
+    
+    <mat-form-field style="margin: 1rem; width: calc(100cqw - 2rem);">
+        <mat-label>New Rule</mat-label>
+        <input matInput type="text" [(ngModel)]="rule.text">
+        <button matSuffix mat-icon-button aria-label="Add" (click)="add()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </mat-form-field>
+
+</div>

@@ -1,0 +1,17 @@
+.center {
+    width: -webkit-fill-available;
+    padding: 10px;
+    box-shadow: 0rem 0rem 0.5rem 0.1rem rgba(0, 0, 0, 0.6901960784);
+    background-color: #D9D9D9;
+    font-size: x-large;
+    //display: grid;
+    align-items: center;
+  }
+
+  .mat-mdc-card{
+    background-color: transparent !important;
+    border-radius: none !important;
+    border-color: transparent !important;
+    box-shadow: none !important
+  }
+  

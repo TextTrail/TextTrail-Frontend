@@ -1,0 +1,35 @@
+input[type="file"] {
+    width: inherit;
+    height: inherit;
+    display: none;
+}
+
+//*-----------------------------------------------*//
+
+.uploader {
+  label {
+    float: left;
+    clear: both;
+    width: inherit;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background-color: #cba243bd;
+    border-radius: 7px;
+    border: .2rem solid #cba243bd;
+    transition: all .2s ease;
+    user-select: none;
+    box-shadow: 0 0 1rem #000000b0;
+
+    &:hover {
+      border-color: #000000a2;
+    }
+  }
+
+  .uploadInner {
+    i.fa {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      transition: all .2s ease-in-out;
+    }
+  }
+}

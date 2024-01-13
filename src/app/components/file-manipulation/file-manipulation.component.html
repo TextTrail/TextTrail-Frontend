@@ -1,0 +1,16 @@
+
+<div style="display: flex; flex-direction: row; margin: .5rem; margin-top: 0;">
+        <div id="file-upload-form" class="uploader" style="display: flex; flex-direction: row;">
+            <div>
+                <input id="file-upload" class="form-control" type="file" (change)="onChange($event)" multiple>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>File to Use</mat-label>
+                    <mat-select (selectionChange)="onSelectFile($event)">
+                        <mat-option *ngFor="let file of files" [value]="file">{{file.name}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+        </div>
+    </div>

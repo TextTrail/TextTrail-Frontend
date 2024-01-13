@@ -1,0 +1,8 @@
+<mat-card *ngIf="frequenzy">
+    <mat-card-content style="display: flex; flex-direction: row;">
+        <div class="center" >
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="map" (click)="heatMapDialog()" ></mat-icon>
+            <span>{{frequenzy.count}}|{{frequenzy.text}}</span> 
+        </div>
+    </mat-card-content>
+</mat-card>

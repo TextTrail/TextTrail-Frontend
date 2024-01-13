@@ -1,0 +1,18 @@
+<div style="flex-grow: 1; background-color: #a87300;overflow:auto ">
+
+    <div style=" background-color: #80808093;">
+        <app-file-manipulation></app-file-manipulation>
+    </div>
+
+    <div [class.loading]="isLoading">
+        <div *ngFor="let frequenzy of frequencies">
+            <app-frequenzy-element *ngIf="!isLoading" [frequenzy]="frequenzy"></app-frequenzy-element>
+        </div>
+
+        <div *ngIf="!frequencies || frequencies.length < 1" style="margin-top: 50vh;">
+            <h1 *ngIf="currentText.length < 1" style="text-align: center;">Select a PDF...</h1>
+            <h1 *ngIf="currentText.length > 0" style="text-align: center;">Select a rule...</h1>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.body {
+    background-color: #d9d9d9;
+}
+
+:root {
+    --mdc-checkbox-state-layer-size: 3rem;
+}
+
+.mdc-checkbox__background {
+    width: var(--mdc-checkbox-state-layer-size) !important;
+    height: var(--mdc-checkbox-state-layer-size) !important;
+}
+.mdc-checkbox {
+    width: var(--mdc-checkbox-state-layer-size) !important;
+    height: var(--mdc-checkbox-state-layer-size) !important;
+    flex: none !important;
+}
+.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background {
+    top: calc((var(--mdc-checkbox-state-layer-size, 3rem) - 18px) / 2) !important;
+    left: calc((var(--mdc-checkbox-state-layer-size, 3rem) - 18px) / 2) !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

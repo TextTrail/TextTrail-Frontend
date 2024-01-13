@@ -1,0 +1,8 @@
+<mat-card>
+    <mat-card-content style="display: flex; flex-direction: row;">
+        <mat-checkbox [(ngModel)]="rule.isEnabled" (change)="onCheck($event.checked)"></mat-checkbox>
+        <div class="center">
+            {{rule.text}}
+        </div>
+    </mat-card-content>
+</mat-card>
