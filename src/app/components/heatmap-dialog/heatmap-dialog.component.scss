@@ -1,0 +1,5 @@
+.heat{
+    --alpha_heat: 0;
+    --bg_heat: rgb(from black r g b / var(--alpha_heat));
+    background-color: var(--bg_heat);
+}

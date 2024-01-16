@@ -15,7 +15,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FrequenzyElementComponent } from './components/frequenzy-element/frequenzy-element.component';
-import { HeatMapComponent } from './components/heat-map/heat-map.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { HeatmapDialogComponent } from './components/heatmap-dialog/heatmap-dialog.component';
 import { UploadDialogComponent } from './components/upload-dialog/upload-dialog.component';
@@ -23,6 +22,7 @@ import { FileManipulationComponent } from './components/file-manipulation/file-m
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -33,7 +33,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     FrequenzyViewComponent,
     RuleComponent,
     FrequenzyElementComponent,
-    HeatMapComponent,
     HeatmapDialogComponent,
     UploadDialogComponent,
     FileManipulationComponent
@@ -62,7 +61,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatGridListModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

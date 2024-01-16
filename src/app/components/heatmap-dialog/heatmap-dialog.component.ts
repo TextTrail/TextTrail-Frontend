@@ -11,4 +11,8 @@ export class HeatmapDialogComponent {
   
   constructor(public dialogRef: MatDialogRef<HeatmapDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Frequenzy) {}
+
+    confirm(){
+      this.dialogRef.close();
+    }
 }

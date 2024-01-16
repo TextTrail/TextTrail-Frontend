@@ -1,1 +1,19 @@
-<app-heat-map [heatmap]="data.heatmap"></app-heat-map>
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Heatmap</mat-card-title>
+    </mat-card-header>
+    <mat-grid-list cols="10" rowHeight="2:1" style="margin: 1rem 2rem;">
+      <mat-grid-tile *ngFor="let element of data.heatmap" style="outline: black solid .2rem;color:black;  --alpha_heat: {{element/5}}" class="heat">
+        {{element}}
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-card-content>
+      <p>
+        A heatmap is a graphical representation of data where values in a matrix are represented as colors.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="confirm()">OK</button>
+    </mat-card-actions>
+  </mat-card>

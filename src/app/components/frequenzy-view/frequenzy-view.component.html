@@ -9,9 +9,9 @@
             <app-frequenzy-element *ngIf="!isLoading" [frequenzy]="frequenzy"></app-frequenzy-element>
         </div>
 
-        <div *ngIf="!frequencies || frequencies.length < 1" style="margin-top: 50vh;">
+        <div *ngIf="!frequencies || frequencies.length < 1">
             <h1 *ngIf="currentText.length < 1" style="text-align: center;">Select a PDF...</h1>
-            <h1 *ngIf="currentText.length > 0" style="text-align: center;">Select a rule...</h1>
+            <h1 *ngIf="currentText.length > 0" style="text-align: center;">No pattern match found...</h1>
         </div>
     </div>
     

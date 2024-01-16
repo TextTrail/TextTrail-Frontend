@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { File } from 'src/app/model/File';
+import { lastValueFrom } from 'rxjs';
+import { FileModel } from 'src/app/model/FileModel';
 import { FileService } from 'src/app/services/file.service';
 
 @Component({
@@ -9,20 +10,20 @@ import { FileService } from 'src/app/services/file.service';
 })
 export class FileManipulationComponent implements OnInit {
 
-  files: File[] = [
+  files: FileModel[] = [
     {
-      id: '123',
+      UID: '123',
       name: 'First PDF Ever',
       timeStamp: new Date(2018, 0O5, 0O5, 17, 23, 42, 11)
     },
     {
-      id: '127',
+      UID: '127',
       name: 'One smal step for me',
       timeStamp: new Date(2021, 0O5, 0O1, 1, 23, 42, 11)
     }
   ];
 
-  selectedFile: File = null as any;
+  selectedFile: FileModel = null as any;
 
   constructor( private fileService: FileService) { }
 
@@ -30,17 +31,24 @@ export class FileManipulationComponent implements OnInit {
   }
 
 
-  onChange(event: any) {
+  async onChange(event: any) {
+    //console.log(event);
+    let response = this.fileService.postPDF(event.target.files[0]);
+    await lastValueFrom(response).then(val => {
+      console.log(val);
+      this.files.push(val);
+    })
   }
 
-  onSelectFile(event: any) {
+  async onSelectFile(event: any) {
     console.log(event);
     this.selectedFile = event.value;
     this.fileService.setIsLoadingFile(true);
-    this.fileService.getFileById(String(this.selectedFile.id));
-    this.fileService.getCurrentFileText()
-    setTimeout(() => {
+    let file = this.fileService.getFile(String(this.selectedFile.UID));
+    await lastValueFrom(file).then(val => {
+      console.log(val);
+      this.fileService.setCurrentFileTexte(String(val.text));
       this.fileService.setIsLoadingFile(false);
-    }, 3000);
+    });
   }
 }

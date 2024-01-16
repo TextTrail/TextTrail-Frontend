@@ -1,5 +1,5 @@
-export class File {
-    id?: String;
+export class FileModel {
+    UID?: String;
     name?: String;
     timeStamp?:Date;
   }
