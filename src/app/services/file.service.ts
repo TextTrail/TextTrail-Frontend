@@ -55,6 +55,8 @@ export class FileService {
 
     let formParams = new FormData();
     formParams.append('file', file)
+    let params = new HttpParams();
+    params.set('filename', file.name);
 
     const headers = new HttpHeaders();
     headers.set('Content-Type', 'application/octet-stream');
@@ -62,6 +64,6 @@ export class FileService {
 
     let result: any;
 
-    return this.httpClient.post<FileModel>(this.url, formParams, { headers: headers });
+    return this.httpClient.post<FileModel>(this.url, formParams, { headers: headers, params:params });
   }
 }
