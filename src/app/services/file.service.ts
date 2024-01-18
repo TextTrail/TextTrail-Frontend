@@ -4,6 +4,7 @@ import { MocFilesService } from './moc-files.service';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { FileModel } from '../model/FileModel';
 import { PDFResponse } from '../model/PDFResponse';
+import config from '../../../config.json';
 
 
 @Injectable({
@@ -13,7 +14,6 @@ export class FileService {
 
   isLoadingFile = new BehaviorSubject<Boolean>(false);
   currentFileText = new BehaviorSubject<String>('');
-  url = "http://127.0.0.1:8080"
 
   constructor(private mocFileService: MocFilesService, private httpClient: HttpClient) { }
 
@@ -38,16 +38,12 @@ export class FileService {
   }
 
   getFile(UID: string){
-
-    let params = new HttpParams();
-    params.set('UID', UID);
-
     const headers = new HttpHeaders();
     headers.set('Content-Length', '0');
 
     let result: any;
 
-    return this.httpClient.get<PDFResponse>(this.url, { 
+    return this.httpClient.get<PDFResponse>(config.serverURL, { 
       params: new HttpParams().set('UID', UID) });
   }
 
@@ -55,8 +51,6 @@ export class FileService {
 
     let formParams = new FormData();
     formParams.append('file', file)
-    let params = new HttpParams();
-    params.set('filename', file.name);
 
     const headers = new HttpHeaders();
     headers.set('Content-Type', 'application/octet-stream');
@@ -64,6 +58,6 @@ export class FileService {
 
     let result: any;
 
-    return this.httpClient.post<FileModel>(this.url, formParams, { headers: headers, params:params });
+    return this.httpClient.post<FileModel>(config.serverURL, formParams, { headers: headers, params:new HttpParams().set('filename', file.name) });
   }
 }
