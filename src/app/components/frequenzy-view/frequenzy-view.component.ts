@@ -30,7 +30,6 @@ export class FrequenzyViewComponent implements OnInit {
     this.ruleService.rules.subscribe(rules => {
       this.currentRules = rules;
       this.checkRules();
-      console.log(this.frequencies);
     });
 
     this.fileService.isLoadingFile.subscribe(update => {

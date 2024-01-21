@@ -32,21 +32,17 @@ export class FileManipulationComponent implements OnInit {
 
 
   async onChange(event: any) {
-    //console.log(event);
     let response = this.fileService.postPDF(event.target.files[0]);
     await lastValueFrom(response).then(val => {
-      console.log(val);
       this.files.push(val);
     })
   }
 
   async onSelectFile(event: any) {
-    console.log(event);
     this.selectedFile = event.value;
     this.fileService.setIsLoadingFile(true);
     let file = this.fileService.getFile(String(this.selectedFile.UID));
     await lastValueFrom(file).then(val => {
-      console.log(val);
       this.fileService.setCurrentFileTexte(String(val.text));
       this.fileService.setIsLoadingFile(false);
     });

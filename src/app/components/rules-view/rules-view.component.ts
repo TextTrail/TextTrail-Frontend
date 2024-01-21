@@ -12,9 +12,11 @@ export class RulesViewComponent implements OnInit {
 
   predefindeRules: Rule[] = [
     { text: '* and *', isEnabled: true },
-    { text: '* versus *', isEnabled: true },
-    { text: '* www *', isEnabled: true },
-    { text: '* not *', isEnabled: true },
+    { text: '*\'s *', isEnabled: true },
+    { text: '* of the *', isEnabled: true },
+    { text: '* a *', isEnabled: true },
+    { text: '* at *', isEnabled: true },
+    { text: '* is *', isEnabled: true },
   ]
   rules: Rule[] = [];
   customRules: Rule[] = [];
