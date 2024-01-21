@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "phrase-net": {
+    "text-trail": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/phrase-net",
+            "outputPath": "dist/text-trail",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "phrase-net:build:production"
+              "browserTarget": "text-trail:build:production"
             },
             "development": {
-              "browserTarget": "phrase-net:build:development"
+              "browserTarget": "text-trail:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +77,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "phrase-net:build"
+            "browserTarget": "text-trail:build"
           }
         },
         "test": {

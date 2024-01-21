@@ -10,18 +10,7 @@ import { FileService } from 'src/app/services/file.service';
 })
 export class FileManipulationComponent implements OnInit {
 
-  files: FileModel[] = [
-    {
-      UID: '123',
-      name: 'First PDF Ever',
-      timeStamp: new Date(2018, 0O5, 0O5, 17, 23, 42, 11)
-    },
-    {
-      UID: '127',
-      name: 'One smal step for me',
-      timeStamp: new Date(2021, 0O5, 0O1, 1, 23, 42, 11)
-    }
-  ];
+  files: FileModel[] = [];
 
   selectedFile: FileModel = null as any;
 
