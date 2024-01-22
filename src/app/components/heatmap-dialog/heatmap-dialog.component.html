@@ -4,7 +4,7 @@
       <mat-card-title>Heatmap</mat-card-title>
     </mat-card-header>
     <mat-grid-list cols="10" rowHeight="2:1" style="margin: 1rem 2rem;">
-      <mat-grid-tile *ngFor="let element of data.heatmap" style="outline: black solid .2rem;color:black;  --alpha_heat: {{element/5}}" class="heat">
+      <mat-grid-tile *ngFor="let element of data.heatmap" style="outline: black solid .2rem;color:black;  --alpha_heat: {{element/5}}; -webkit-text-stroke-width: .05rem;-webkit-text-stroke-color: white;font-size: 1.5rem;" class="heat">
         {{element}}
       </mat-grid-tile>
     </mat-grid-list>
